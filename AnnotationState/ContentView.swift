@@ -9,8 +9,22 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State var sw = false
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        VStack {
+            Toggle(isOn: $sw) {
+                Text("OnOff")
+            }.padding()
+            
+            if sw {
+                Text("Hello, World!")
+            } else {
+                Text("Hello, SwiftUI!")
+            }
+        }
     }
 }
 
